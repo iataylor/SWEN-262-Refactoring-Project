@@ -25,7 +25,7 @@ import java.io.*;
 class BowlerFile {
 
 	/** The location of the bowelr database */
-	private static String BOWLER_DAT = "C:\\Users\\georg\\Documents\\BOWLERS.DAT";
+	private static String BOWLER_DAT = System.getProperty("user.dir") + "\\BOWLER_DAT";
 
     /**
      * Retrieves bowler information from the database and returns a Bowler objects with populated fields.
@@ -100,6 +100,7 @@ class BowlerFile {
 		//throws IOException, FileNotFoundException {
 		Vector allBowlers = new Vector();
 		try {
+			System.out.println(BOWLER_DAT);
 			File file = new File(BOWLER_DAT);
 			if (!file.exists())
 				file.createNewFile();
