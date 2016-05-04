@@ -374,7 +374,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * 
 	 * @param theParty		Party to be assigned
 	 */
-	public void assignParty( Party theParty ) { 
+	public void assignParty( Party theParty ) {
 		party = theParty;
 		resetBowlerIterator();
 		partyAssigned = true;
