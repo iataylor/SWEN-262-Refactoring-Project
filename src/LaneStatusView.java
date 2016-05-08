@@ -133,8 +133,8 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 	}
 
 	public void receiveLaneEvent(LaneEvent le) {
-		curBowler.setText( ( (Bowler)le.getBowler()).getNickName() );
-		if ( le.isMechanicalProblem() ) {
+		curBowler.setText( lane.getCurrentThrower().getNickName() );
+		if (lane.isGameIsHalted()) {
 			maintenance.setBackground( Color.RED );
 		}	
 		if ( lane.isPartyAssigned() == false ) {
