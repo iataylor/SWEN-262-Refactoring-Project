@@ -138,7 +138,8 @@ import java.util.*;
 public class Lane extends Thread implements PinsetterObserver {	
 	private Party party;
 	private Pinsetter setter;
-	private HashMap scores;
+	private PinsetterServer pinsetterServer;
+	private HashMap scores = new HashMap();
 
 	private boolean gameIsHalted;
 
@@ -160,6 +161,10 @@ public class Lane extends Thread implements PinsetterObserver {
 	LaneServer  laneServer;
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
+	public PinsetterServer getPinsetterServer() {
+		return pinsetterServer;
+	}
+
 	/** Lane()
 	 * 
 	 * Constructs a new lane and starts its thread
@@ -168,7 +173,8 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * @post a new lane has been created and its thered is executing
 	 */
 	public Lane() { 
-		setter = new Pinsetter();
+		pinsetterServer = new PinsetterServer();
+		setter = new Pinsetter(pinsetterServer);
 		scores = new HashMap();
 		laneServer = new LaneServer();
 		gameIsHalted = false;
@@ -176,7 +182,7 @@ public class Lane extends Thread implements PinsetterObserver {
 
 		gameNumber = 0;
 
-		setter.subscribe( this );
+		pinsetterServer.subscribe( this );
 		
 		this.start();
 	}
@@ -254,7 +260,7 @@ public class Lane extends Thread implements PinsetterObserver {
 					party = null;
 					partyAssigned = false;
 					
-					laneServer.publish(lanePublish());
+					laneServer.publish();
 					
 					int myIndex = 0;
 					while (scoreIt.hasNext()){
@@ -402,6 +408,7 @@ public class Lane extends Thread implements PinsetterObserver {
 
 		curScore[ index - 1] = score;
 		scores.put(Cur, curScore);
+<<<<<<< HEAD
 		getScore( Cur);
 		laneServer.publish( lanePublish() );
 	}
@@ -415,6 +422,10 @@ public class Lane extends Thread implements PinsetterObserver {
 	private LaneEvent lanePublish(  ) {
 		LaneEvent laneEvent = new LaneEvent(this);
 		return laneEvent;
+=======
+		getScore( Cur, frame );
+		laneServer.publish();
+>>>>>>> c95eeabc5660d1fd6b1a2f2e5dd34331225d3782
 	}
 
 	/** getScore()
@@ -492,7 +503,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 */
 	public void pauseGame() {
 		gameIsHalted = true;
-		laneServer.publish(lanePublish());
+		laneServer.publish();
 	}
 	
 	/**
@@ -500,7 +511,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 */
 	public void unPauseGame() {
 		gameIsHalted = false;
-		laneServer.publish(lanePublish());
+		laneServer.publish();
 	}
 
 	public LaneServer getLaneServer() {

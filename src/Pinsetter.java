@@ -76,8 +76,7 @@ import java.util.Vector;
 public class Pinsetter {
 
 	private Random rnd;
-	private Vector subscribers;
-
+	PinsetterServer pinserver;
 	private boolean[] pins; 
 			/* 0-9 of state of pine, true for standing, 
 			false for knocked down
@@ -91,19 +90,6 @@ public class Pinsetter {
 	private boolean foul;
 	private int throwNumber;
 
-	/** sendEvent()
-	 * 
-	 * Sends pinsetter events to all subscribers
-	 * 
-	 * @pre none
-	 * @post all subscribers have recieved pinsetter event with updated state
-	 * */
-	private void sendEvent(int jdpins) {	// send events when our state is changd
-		for (int i=0; i < subscribers.size(); i++) {
-			((PinsetterObserver)subscribers.get(i)).receivePinsetterEvent(
-				new PinsetterEvent(pins, foul, throwNumber, jdpins));
-		}
-	}
 
 	/** Pinsetter()
 	 * 
@@ -113,10 +99,10 @@ public class Pinsetter {
 	 * @post a new pinsetter is created
 	 * @return Pinsetter object
 	 */
-	public Pinsetter() {
+	public Pinsetter(PinsetterServer server) {
 		pins = new boolean[10];
 		rnd = new Random();
-		subscribers = new Vector();
+		pinserver = server;
 		foul = false;
 		reset();
 	}
@@ -151,7 +137,7 @@ public class Pinsetter {
 			Thread.sleep(500);				// pinsetter is where delay will be in a real game
 		} catch (Exception e) {}
 
-		sendEvent(count);
+		pinserver.sendEvent(new PinsetterEvent(pins, foul, throwNumber, count));
 
 		throwNumber++;
 	}
@@ -172,7 +158,7 @@ public class Pinsetter {
 			Thread.sleep(1000);
 		} catch (Exception e) {}
 		
-		sendEvent(-1);
+		pinserver.sendEvent(new PinsetterEvent(pins, foul, throwNumber, -1));
 	}
 
 	/** resetPins()
@@ -186,17 +172,6 @@ public class Pinsetter {
 		for (int i=0; i <= 9; i++) {
 			pins[i] = true;
 		}
-	}		
-
-	/** subscribe()
-	 * 
-	 * subscribe objects to send events to
-	 * 
-	 * @pre none
-	 * @post the subscriber object will recieve events when their generated
-	 */
-	public void subscribe(PinsetterObserver subscriber) {
-		subscribers.add(subscriber);
 	}
 
 }
