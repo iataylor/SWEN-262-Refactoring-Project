@@ -30,12 +30,12 @@ public class LaneServer {
 	 * @param event	Event that is to be published
 	 */
 
-	public void publish( LaneEvent event ) {
+	public void publish() {
 		if( subscribers.size() > 0 ) {
 			Iterator eventIterator = subscribers.iterator();
 
 			while ( eventIterator.hasNext() ) {
-				( (LaneObserver) eventIterator.next()).receiveLaneEvent( event );
+				( (LaneObserver) eventIterator.next()).receiveLaneEvent();
 			}
 		}
 	}

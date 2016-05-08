@@ -28,11 +28,10 @@ public class LaneView implements LaneObserver, ActionListener {
 
 	JButton maintenance;
 	Lane lane;
-
+	boolean started = false;
 	public LaneView(Lane lane, int laneNum) {
 
 		this.lane = lane;
-
 		initDone = true;
 		frame = new JFrame("Lane " + laneNum + ":");
 		cpanel = frame.getContentPane();
@@ -122,8 +121,9 @@ public class LaneView implements LaneObserver, ActionListener {
 		return panel;
 	}
 
-	public void receiveLaneEvent(LaneEvent le) {
+	public void receiveLaneEvent() {
 		if (lane.isPartyAssigned()) {
+			bowlers = lane.getParty().getMembers();
 			int numBowlers = lane.getParty().getMembers().size();
 			while (!initDone) {
 				//System.out.println("chillin' here.");
