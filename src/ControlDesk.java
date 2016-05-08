@@ -59,7 +59,7 @@ class ControlDesk extends Thread {
 	private Vector subscribers;
 
     /**
-     * Constructor for the ControlDesk class
+     * Constructor for the ControlDesk class    
      *
      * @param numLanes	the numbler of lanes to be represented
      *
