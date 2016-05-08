@@ -25,7 +25,7 @@
 
 import java.util.HashMap;
 
-public class LaneEvent implements  LaneEventInterface {
+public class LaneEvent implements LaneEventInterface {
 
 	private Party p;
 	int frame;
