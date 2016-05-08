@@ -139,6 +139,7 @@ import java.util.Vector;
 public class Lane extends Thread implements PinsetterObserver {	
 	private Party party;
 	private Pinsetter setter;
+	private PinsetterServer pinsetterServer;
 	private HashMap scores = new HashMap();
 
 	private boolean gameIsHalted;
@@ -161,6 +162,10 @@ public class Lane extends Thread implements PinsetterObserver {
 	LaneServer  laneServer;
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
+	public PinsetterServer getPinsetterServer() {
+		return pinsetterServer;
+	}
+
 	/** Lane()
 	 * 
 	 * Constructs a new lane and starts its thread
@@ -169,7 +174,8 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * @post a new lane has been created and its thered is executing
 	 */
 	public Lane() { 
-		setter = new Pinsetter();
+		pinsetterServer = new PinsetterServer();
+		setter = new Pinsetter(pinsetterServer);
 		scores = new HashMap();
 		laneServer = new LaneServer();
 		gameIsHalted = false;
@@ -177,7 +183,7 @@ public class Lane extends Thread implements PinsetterObserver {
 
 		gameNumber = 0;
 
-		setter.subscribe( this );
+		pinsetterServer.subscribe( this );
 		
 		this.start();
 	}

@@ -16,8 +16,6 @@ public class LaneView implements LaneObserver, ActionListener {
     JFrame frame;
     Container cpanel;
     Vector bowlers;
-    int cur;
-    Iterator bowlIt;
 
     JPanel[][] balls;
     JLabel[][] ballLabel;
@@ -178,20 +176,20 @@ public class LaneView implements LaneObserver, ActionListener {
                             ballLabel[k][i].setText("X");
                         else if (
                                 i > 0
-                                        && ((int[]) ((HashMap) lane.getScores())
+                                        && ((int[]) (lane.getScores())
                                         .get(bowlers.get(k)))[i]
-                                        + ((int[]) ((HashMap) lane.getScores())
+                                        + ((int[]) (lane.getScores())
                                         .get(bowlers.get(k)))[i
                                         - 1]
                                         == 10
                                         && i % 2 == 1)
                             ballLabel[k][i].setText("/");
-                        else if (((int[]) ((HashMap) lane.getScores()).get(bowlers.get(k)))[i] == -2) {
+                        else if (((int[]) (lane.getScores()).get(bowlers.get(k)))[i] == -2) {
 
                             ballLabel[k][i].setText("F");
                         } else
                             ballLabel[k][i].setText(
-                                    (new Integer(((int[]) ((HashMap) lane.getScores())
+                                    (new Integer(((int[]) (lane.getScores())
                                             .get(bowlers.get(k)))[i]))
                                             .toString());
                     }
