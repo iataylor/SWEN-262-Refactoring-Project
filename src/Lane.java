@@ -408,25 +408,10 @@ public class Lane extends Thread implements PinsetterObserver {
 
 		curScore[ index - 1] = score;
 		scores.put(Cur, curScore);
-<<<<<<< HEAD
-		getScore( Cur);
-		laneServer.publish( lanePublish() );
-	}
 
-	/** lanePublish()
-	 *
-	 * Method that creates and returns a newly created laneEvent
-	 * 
-	 * @return		The new lane event
-	 */
-	private LaneEvent lanePublish(  ) {
-		LaneEvent laneEvent = new LaneEvent(this);
-		return laneEvent;
-=======
-		getScore( Cur, frame );
+		getScore( Cur);
 		laneServer.publish();
->>>>>>> c95eeabc5660d1fd6b1a2f2e5dd34331225d3782
-	}
+}
 
 	/** getScore()
 	 *
