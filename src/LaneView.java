@@ -3,14 +3,10 @@
  *
  */
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.Iterator;
-import java.util.Vector;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.*;
 
 public class LaneView implements LaneObserver, ActionListener {
 
@@ -44,7 +40,7 @@ public class LaneView implements LaneObserver, ActionListener {
 
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				frame.setVisible(false);
+				frame.hide();
 			}
 		});
 
@@ -53,11 +49,11 @@ public class LaneView implements LaneObserver, ActionListener {
 	}
 
 	public void show() {
-		frame.setVisible(true);
+		frame.show();
 	}
 
 	public void hide() {
-		frame.setVisible(false);
+		frame.hide();
 	}
 
 	private JPanel makeFrame(Party party) {
@@ -172,30 +168,30 @@ public class LaneView implements LaneObserver, ActionListener {
 							(new Integer(lescores[k][i])).toString());
 				}
 				for (int i = 0; i < 21; i++) {
-					if (((int[]) le.getScore()
+					if (((int[]) ((HashMap) le.getScore())
 						.get(bowlers.get(k)))[i]
 						!= -1)
-						if (((int[]) le.getScore()
+						if (((int[]) ((HashMap) le.getScore())
 							.get(bowlers.get(k)))[i]
 							== 10
 							&& (i % 2 == 0 || i == 19))
 							ballLabel[k][i].setText("X");
 						else if (
 							i > 0
-								&& ((int[]) le.getScore()
+								&& ((int[]) ((HashMap) le.getScore())
 									.get(bowlers.get(k)))[i]
-									+ ((int[]) le.getScore()
+									+ ((int[]) ((HashMap) le.getScore())
 										.get(bowlers.get(k)))[i
 									- 1]
 									== 10
 								&& i % 2 == 1)
 							ballLabel[k][i].setText("/");
-						else if ( ((int[]) le.getScore().get(bowlers.get(k)))[i] == -2 ){
+						else if ( ((int[])((HashMap) le.getScore()).get(bowlers.get(k)))[i] == -2 ){
 							
 							ballLabel[k][i].setText("F");
 						} else
 							ballLabel[k][i].setText(
-								(new Integer(((int[]) le.getScore()
+								(new Integer(((int[]) ((HashMap) le.getScore())
 									.get(bowlers.get(k)))[i]))
 									.toString());
 				}

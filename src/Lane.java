@@ -415,7 +415,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * @return		The new lane event
 	 */
 	private LaneEvent lanePublish(  ) {
-		LaneEvent laneEvent = new LaneEvent(party, bowlIndex, currentThrower, cumulScores, scores, frameNumber+1, curScores, ball, gameIsHalted);
+		LaneEvent laneEvent = new LaneEvent(this);
 		return laneEvent;
 	}
 
@@ -590,4 +590,69 @@ public class Lane extends Thread implements PinsetterObserver {
 	public LaneServer getLaneServer() {
 		return laneServer;
 	}
+
+    /**
+     * All of the generic getters for all variables in Lane. Used for LaneEvent data visibility.
+     *
+     */
+
+    public Party getParty() {
+        return party;
+    }
+
+    public Pinsetter getSetter() {
+        return setter;
+    }
+
+    public HashMap getScores() {
+        return scores;
+    }
+
+    public boolean isGameIsHalted() {
+        return gameIsHalted;
+    }
+
+    public Iterator getBowlerIterator() {
+        return bowlerIterator;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
+    public int getBowlIndex() {
+        return bowlIndex;
+    }
+
+    public int getFrameNumber() {
+        return frameNumber;
+    }
+
+    public boolean isTenthFrameStrike() {
+        return tenthFrameStrike;
+    }
+
+    public int[] getCurScores() {
+        return curScores;
+    }
+
+    public int[][] getCumulScores() {
+        return cumulScores;
+    }
+
+    public boolean isCanThrowAgain() {
+        return canThrowAgain;
+    }
+
+    public int[][] getFinalScores() {
+        return finalScores;
+    }
+
+    public int getGameNumber() {
+        return gameNumber;
+    }
+
+    public Bowler getCurrentThrower() {
+        return currentThrower;
+    }
 }
