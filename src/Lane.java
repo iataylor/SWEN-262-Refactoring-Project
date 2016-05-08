@@ -131,7 +131,10 @@
  * 
  */
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Vector;
 
 public class Lane extends Thread implements PinsetterObserver {	
 	private Party party;
@@ -261,7 +264,7 @@ public class Lane extends Thread implements PinsetterObserver {
 						sr.sendEmail(thisBowler.getEmail());
 						Iterator printIt = printVector.iterator();
 						while (printIt.hasNext()){
-							if (thisBowler.getNick() == (String)printIt.next()){
+							if (thisBowler.getNick() == printIt.next()){
 								System.out.println("Printing " + thisBowler.getNick());
 								sr.sendPrintout();
 							}

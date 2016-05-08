@@ -19,8 +19,8 @@
  *
  */
 
-import java.util.*;
 import java.io.*;
+import java.util.Vector;
 
 class BowlerFile {
 
@@ -79,7 +79,7 @@ class BowlerFile {
 		String nickName,
 		String fullName,
 		String email)
-		throws IOException, FileNotFoundException {
+		throws IOException {
 
 		String data = nickName + "\t" + fullName + "\t" + email + "\n";
 

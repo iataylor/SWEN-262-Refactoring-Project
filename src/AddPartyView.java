@@ -25,14 +25,14 @@
  *
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-
-import java.util.*;
-import java.text.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
 /**
  * Constructor for GUI used to Add Parties to the waiting party queue.
@@ -151,7 +151,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		win.setLocation(
 			((screenSize.width) / 2) - ((win.getSize().width) / 2),
 			((screenSize.height) / 2) - ((win.getSize().height) / 2));
-		win.show();
+		win.setVisible(true);
 
 	}
 
@@ -179,7 +179,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 			if ( party != null && party.size() > 0) {
 				controlDesk.updateAddParty( this );
 			}
-			win.hide();
+			win.setVisible(false);
 		}
 
 	}

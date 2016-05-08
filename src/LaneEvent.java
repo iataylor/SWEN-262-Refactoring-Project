@@ -91,5 +91,5 @@ public class LaneEvent implements  LaneEventInterface {
 		return bowler;
 	}
 
-};
+}
  

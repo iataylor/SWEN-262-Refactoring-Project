@@ -6,15 +6,18 @@
  * Window>Preferences>Java>Code Generation.
  */
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Vector;
 
 public class ScoreHistoryFile {
 
 	private static String SCOREHISTORY_DAT = "SCOREHISTORY.DAT";
 
 	public static void addScore(String nick, String date, String score)
-		throws IOException, FileNotFoundException {
+		throws IOException {
 
 		String data = nick + "\t" + date + "\t" + score + "\n";
 
@@ -25,7 +28,7 @@ public class ScoreHistoryFile {
 	}
 
 	public static Vector getScores(String nick)
-		throws IOException, FileNotFoundException {
+		throws IOException {
 		Vector scores = new Vector();
 
 		BufferedReader in =

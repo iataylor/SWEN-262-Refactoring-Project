@@ -1,4 +1,3 @@
-import java.rmi.Remote;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -9,6 +8,7 @@ public class LaneServer {
 	}
 	private Vector subscribers;
 	public void subscribe( LaneObserver adding ) {
+		System.out.println(adding.toString());
 		subscribers.add( adding );
 	}
 
@@ -39,5 +39,5 @@ public class LaneServer {
 			}
 		}
 	}
-};
+}
 

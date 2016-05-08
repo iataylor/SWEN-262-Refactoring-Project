@@ -16,14 +16,11 @@
  *
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-
-import java.util.*;
-import java.text.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class NewPatronView implements ActionListener {
 
@@ -116,14 +113,14 @@ public class NewPatronView implements ActionListener {
 		win.setLocation(
 			((screenSize.width) / 2) - ((win.getSize().width) / 2),
 			((screenSize.height) / 2) - ((win.getSize().height) / 2));
-		win.show();
+		win.setVisible(true);
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(abort)) {
 			done = true;
-			win.hide();
+			win.setVisible(false);
 		}
 
 		if (e.getSource().equals(finished)) {
@@ -132,7 +129,7 @@ public class NewPatronView implements ActionListener {
 			email = emailField.getText();
 			done = true;
 			addParty.updateNewPatron( this );
-			win.hide();
+			win.setVisible(false);
 		}
 
 	}
