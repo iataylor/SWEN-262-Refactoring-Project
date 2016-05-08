@@ -10,201 +10,202 @@ import java.util.*;
 
 public class LaneView implements LaneObserver, ActionListener {
 
-	private int roll;
-	private boolean initDone = true;
+    private int roll;
+    private boolean initDone = true;
 
-	JFrame frame;
-	Container cpanel;
-	Vector bowlers;
-	int cur;
-	Iterator bowlIt;
+    JFrame frame;
+    Container cpanel;
+    Vector bowlers;
+    int cur;
+    Iterator bowlIt;
 
-	JPanel[][] balls;
-	JLabel[][] ballLabel;
-	JPanel[][] scores;
-	JLabel[][] scoreLabel;
-	JPanel[][] ballGrid;
-	JPanel[] pins;
+    JPanel[][] balls;
+    JLabel[][] ballLabel;
+    JPanel[][] scores;
+    JLabel[][] scoreLabel;
+    JPanel[][] ballGrid;
+    JPanel[] pins;
 
-	JButton maintenance;
-	Lane lane;
-	boolean started = false;
-	public LaneView(Lane lane, int laneNum) {
+    JButton maintenance;
+    Lane lane;
 
-		this.lane = lane;
-		initDone = true;
-		frame = new JFrame("Lane " + laneNum + ":");
-		cpanel = frame.getContentPane();
-		cpanel.setLayout(new BorderLayout());
+    public LaneView(Lane lane, int laneNum) {
 
-		frame.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-				frame.hide();
-			}
-		});
+        this.lane = lane;
+        initDone = true;
+        frame = new JFrame("Lane " + laneNum + ":");
+        cpanel = frame.getContentPane();
+        cpanel.setLayout(new BorderLayout());
 
-		cpanel.add(new JPanel());
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                frame.hide();
+            }
+        });
 
-	}
+        cpanel.add(new JPanel());
 
-	public void show() {
-		frame.show();
-	}
+    }
 
-	public void hide() {
-		frame.hide();
-	}
+    public void show() {
+        frame.show();
+    }
 
-	private JPanel makeFrame(Party party) {
+    public void hide() {
+        frame.hide();
+    }
 
-		initDone = false;
-		bowlers = party.getMembers();
-		int numBowlers = bowlers.size();
+    private JPanel makeFrame(Party party) {
 
-		JPanel panel = new JPanel();
+        initDone = false;
+        bowlers = party.getMembers();
+        int numBowlers = bowlers.size();
 
-		panel.setLayout(new GridLayout(0, 1));
+        JPanel panel = new JPanel();
 
-		balls = new JPanel[numBowlers][23];
-		ballLabel = new JLabel[numBowlers][23];
-		scores = new JPanel[numBowlers][10];
-		scoreLabel = new JLabel[numBowlers][10];
-		ballGrid = new JPanel[numBowlers][10];
-		pins = new JPanel[numBowlers];
+        panel.setLayout(new GridLayout(0, 1));
 
-		for (int i = 0; i != numBowlers; i++) {
-			for (int j = 0; j != 23; j++) {
-				ballLabel[i][j] = new JLabel(" ");
-				balls[i][j] = new JPanel();
-				balls[i][j].setBorder(
-						BorderFactory.createLineBorder(Color.BLACK));
-				balls[i][j].add(ballLabel[i][j]);
-			}
-		}
+        balls = new JPanel[numBowlers][23];
+        ballLabel = new JLabel[numBowlers][23];
+        scores = new JPanel[numBowlers][10];
+        scoreLabel = new JLabel[numBowlers][10];
+        ballGrid = new JPanel[numBowlers][10];
+        pins = new JPanel[numBowlers];
 
-		for (int i = 0; i != numBowlers; i++) {
-			for (int j = 0; j != 9; j++) {
-				ballGrid[i][j] = new JPanel();
-				ballGrid[i][j].setLayout(new GridLayout(0, 3));
-				ballGrid[i][j].add(new JLabel("  "), BorderLayout.EAST);
-				ballGrid[i][j].add(balls[i][2 * j], BorderLayout.EAST);
-				ballGrid[i][j].add(balls[i][2 * j + 1], BorderLayout.EAST);
-			}
-			int j = 9;
-			ballGrid[i][j] = new JPanel();
-			ballGrid[i][j].setLayout(new GridLayout(0, 3));
-			ballGrid[i][j].add(balls[i][2 * j]);
-			ballGrid[i][j].add(balls[i][2 * j + 1]);
-			ballGrid[i][j].add(balls[i][2 * j + 2]);
-		}
+        for (int i = 0; i != numBowlers; i++) {
+            for (int j = 0; j != 23; j++) {
+                ballLabel[i][j] = new JLabel(" ");
+                balls[i][j] = new JPanel();
+                balls[i][j].setBorder(
+                        BorderFactory.createLineBorder(Color.BLACK));
+                balls[i][j].add(ballLabel[i][j]);
+            }
+        }
 
-		for (int i = 0; i != numBowlers; i++) {
-			pins[i] = new JPanel();
-			pins[i].setBorder(
-					BorderFactory.createTitledBorder(
-							((Bowler) bowlers.get(i)).getNick()));
-			pins[i].setLayout(new GridLayout(0, 10));
-			for (int k = 0; k != 10; k++) {
-				scores[i][k] = new JPanel();
-				scoreLabel[i][k] = new JLabel("  ", SwingConstants.CENTER);
-				scores[i][k].setBorder(
-						BorderFactory.createLineBorder(Color.BLACK));
-				scores[i][k].setLayout(new GridLayout(0, 1));
-				scores[i][k].add(ballGrid[i][k], BorderLayout.EAST);
-				scores[i][k].add(scoreLabel[i][k], BorderLayout.SOUTH);
-				pins[i].add(scores[i][k], BorderLayout.EAST);
-			}
-			panel.add(pins[i]);
-		}
+        for (int i = 0; i != numBowlers; i++) {
+            for (int j = 0; j != 9; j++) {
+                ballGrid[i][j] = new JPanel();
+                ballGrid[i][j].setLayout(new GridLayout(0, 3));
+                ballGrid[i][j].add(new JLabel("  "), BorderLayout.EAST);
+                ballGrid[i][j].add(balls[i][2 * j], BorderLayout.EAST);
+                ballGrid[i][j].add(balls[i][2 * j + 1], BorderLayout.EAST);
+            }
+            int j = 9;
+            ballGrid[i][j] = new JPanel();
+            ballGrid[i][j].setLayout(new GridLayout(0, 3));
+            ballGrid[i][j].add(balls[i][2 * j]);
+            ballGrid[i][j].add(balls[i][2 * j + 1]);
+            ballGrid[i][j].add(balls[i][2 * j + 2]);
+        }
 
-		initDone = true;
-		return panel;
-	}
+        for (int i = 0; i != numBowlers; i++) {
+            pins[i] = new JPanel();
+            pins[i].setBorder(
+                    BorderFactory.createTitledBorder(
+                            ((Bowler) bowlers.get(i)).getNick()));
+            pins[i].setLayout(new GridLayout(0, 10));
+            for (int k = 0; k != 10; k++) {
+                scores[i][k] = new JPanel();
+                scoreLabel[i][k] = new JLabel("  ", SwingConstants.CENTER);
+                scores[i][k].setBorder(
+                        BorderFactory.createLineBorder(Color.BLACK));
+                scores[i][k].setLayout(new GridLayout(0, 1));
+                scores[i][k].add(ballGrid[i][k], BorderLayout.EAST);
+                scores[i][k].add(scoreLabel[i][k], BorderLayout.SOUTH);
+                pins[i].add(scores[i][k], BorderLayout.EAST);
+            }
+            panel.add(pins[i]);
+        }
 
-	public void receiveLaneEvent() {
-		if (lane.isPartyAssigned()) {
-			bowlers = lane.getParty().getMembers();
-			int numBowlers = lane.getParty().getMembers().size();
-			while (!initDone) {
-				//System.out.println("chillin' here.");
-				try {
-					Thread.sleep(1);
-				} catch (Exception e) {
-				}
-			}
+        initDone = true;
+        return panel;
+    }
 
-			if (lane.getFrameNumber() == 1
-					&& lane.getBall() == 0
-					&& lane.getBowlIndex() == 0) {
-				System.out.println("Making the frame.");
-				cpanel.removeAll();
-				cpanel.add(makeFrame(lane.getParty()), "Center");
+    public void receiveLaneEvent() {
+        if (lane.isPartyAssigned()) {
+            bowlers = lane.getParty().getMembers();
+            int numBowlers = lane.getParty().getMembers().size();
+            while (!initDone) {
+                //System.out.println("chillin' here.");
+                try {
+                    Thread.sleep(1);
+                } catch (Exception e) {
+                }
+            }
 
-				// Button Panel
-				JPanel buttonPanel = new JPanel();
-				buttonPanel.setLayout(new FlowLayout());
+            if (lane.getFrameNumber() == 1
+                    && lane.getBall() == 0
+                    && lane.getBowlIndex() == 0) {
+                System.out.println("Making the frame.");
+                cpanel.removeAll();
+                cpanel.add(makeFrame(lane.getParty()), "Center");
 
-				Insets buttonMargin = new Insets(4, 4, 4, 4);
+                // Button Panel
+                JPanel buttonPanel = new JPanel();
+                buttonPanel.setLayout(new FlowLayout());
 
-				maintenance = new JButton("Maintenance Call");
-				JPanel maintenancePanel = new JPanel();
-				maintenancePanel.setLayout(new FlowLayout());
-				maintenance.addActionListener(this);
-				maintenancePanel.add(maintenance);
+                Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-				buttonPanel.add(maintenancePanel);
+                maintenance = new JButton("Maintenance Call");
+                JPanel maintenancePanel = new JPanel();
+                maintenancePanel.setLayout(new FlowLayout());
+                maintenance.addActionListener(this);
+                maintenancePanel.add(maintenance);
 
-				cpanel.add(buttonPanel, "South");
+                buttonPanel.add(maintenancePanel);
 
-				frame.pack();
+                cpanel.add(buttonPanel, "South");
 
-			}
+                frame.pack();
 
-			int[][] lescores = lane.getCumulScores();
-			for (int k = 0; k < numBowlers; k++) {
-				for (int i = 0; i <= lane.getFrameNumber() - 1; i++) {
-					if (lescores[k][i] != 0)
-						scoreLabel[k][i].setText(
-								(new Integer(lescores[k][i])).toString());
-				}
-				for (int i = 0; i < 21; i++) {
-					if (((int[]) (lane.getScores())
-							.get(bowlers.get(k)))[i]
-							!= -1)
-						if (((int[]) (lane.getScores())
-								.get(bowlers.get(k)))[i]
-								== 10
-								&& (i % 2 == 0 || i == 19))
-							ballLabel[k][i].setText("X");
-						else if (
-								i > 0
-										&& ((int[]) ((HashMap) lane.getScores())
-										.get(bowlers.get(k)))[i]
-										+ ((int[]) ((HashMap) lane.getScores())
-										.get(bowlers.get(k)))[i
-										- 1]
-										== 10
-										&& i % 2 == 1)
-							ballLabel[k][i].setText("/");
-						else if ( ((int[])((HashMap) lane.getScores()).get(bowlers.get(k)))[i] == -2 ){
+            }
 
-							ballLabel[k][i].setText("F");
-						} else
-							ballLabel[k][i].setText(
-									(new Integer(((int[]) ((HashMap) lane.getScores())
-											.get(bowlers.get(k)))[i]))
-											.toString());
-				}
-			}
+            int[][] lescores = lane.getCumulScores();
+            for (int k = 0; k < numBowlers; k++) {
+                for (int i = 0; i <= lane.getFrameNumber() - 1; i++) {
+                    if (lescores[k][i] != 0)
+                        scoreLabel[k][i].setText(
+                                (new Integer(lescores[k][i])).toString());
+                }
+                for (int i = 0; i < 21; i++) {
+                    if (((int[]) (lane.getScores())
+                            .get(bowlers.get(k)))[i]
+                            != -1 && ballLabel != null) {
+                        if (((int[]) (lane.getScores())
+                                .get(bowlers.get(k)))[i]
+                                == 10
+                                && (i % 2 == 0 || i == 19))
+                            ballLabel[k][i].setText("X");
+                        else if (
+                                i > 0
+                                        && ((int[]) ((HashMap) lane.getScores())
+                                        .get(bowlers.get(k)))[i]
+                                        + ((int[]) ((HashMap) lane.getScores())
+                                        .get(bowlers.get(k)))[i
+                                        - 1]
+                                        == 10
+                                        && i % 2 == 1)
+                            ballLabel[k][i].setText("/");
+                        else if (((int[]) ((HashMap) lane.getScores()).get(bowlers.get(k)))[i] == -2) {
 
-		}
-	}
+                            ballLabel[k][i].setText("F");
+                        } else
+                            ballLabel[k][i].setText(
+                                    (new Integer(((int[]) ((HashMap) lane.getScores())
+                                            .get(bowlers.get(k)))[i]))
+                                            .toString());
+                    }
+                }
+            }
 
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource().equals(maintenance)) {
-			lane.pauseGame();
-		}
-	}
+        }
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(maintenance)) {
+            lane.pauseGame();
+        }
+    }
 
 }
 
