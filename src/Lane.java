@@ -170,7 +170,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * Constructs a new lane and starts its thread
 	 * 
 	 * @pre none
-	 * @post a new lane has been created and its thered is executing
+	 * @post a new lane has been created and its there is executing
 	 */
 	public Lane() { 
 		pinsetterServer = new PinsetterServer();
@@ -299,7 +299,7 @@ public class Lane extends Thread implements PinsetterObserver {
 		
 			if (pe.pinsDownOnThisThrow() >=  0) {			// this is a real throw
 				markScore(currentThrower, frameNumber + 1, pe.getThrowNumber(), pe.pinsDownOnThisThrow());
-	
+				System.out.println(pe.pinsDownOnThisThrow());
 				// next logic handles the ?: what conditions dont allow them another throw?
 				// handle the case of 10th frame first
 				if (frameNumber == 9) {
@@ -408,8 +408,9 @@ public class Lane extends Thread implements PinsetterObserver {
 
 		curScore[ index - 1] = score;
 		scores.put(Cur, curScore);
-
 		getScore( Cur);
+		for(Integer i : curScore)
+			System.out.println(i);
 		laneServer.publish();
 }
 
@@ -425,7 +426,6 @@ public class Lane extends Thread implements PinsetterObserver {
 	private int getScore( Bowler Cur) {
         int[] curScore;
         curScore = (int[]) scores.get(Cur);
-
         if (curScore.length % 2 != 0)
             return -1;
 

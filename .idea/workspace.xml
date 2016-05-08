@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6a39b4-abda-4e43-83df-2a2fabc0017f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PinsetterServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneView$1.class" afterPath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/Lane.class" afterPath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/Lane.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneServer.class" afterPath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneView.class" afterPath="$PROJECT_DIR$/out/production/SWEN-262-Refactoring-Project/LaneView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ControlDeskView.java" afterPath="$PROJECT_DIR$/src/ControlDeskView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Lane.java" afterPath="$PROJECT_DIR$/src/Lane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LaneStatusView.java" afterPath="$PROJECT_DIR$/src/LaneStatusView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LaneView.java" afterPath="$PROJECT_DIR$/src/LaneView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pinsetter.java" afterPath="$PROJECT_DIR$/src/Pinsetter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LaneServer.java" afterPath="$PROJECT_DIR$/src/LaneServer.java" />
     </list>
     <ignored path="SWEN-262-Refactoring-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,35 +30,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LaneEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LaneEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="92" column="25" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#1909#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PinsetterEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PinsetterEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
+            <state relative-caret-position="705">
               <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PinsetterObserver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PinsetterObserver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PinsetterServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PinsetterServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding>
-                <element signature="e#168#169#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -69,8 +55,8 @@
       <file leaf-file-name="Pinsetter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pinsetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+            <state relative-caret-position="-927">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,38 +72,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PinSetterView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PinSetterView.java">
+      <file leaf-file-name="LaneServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LaneServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="211" column="24" selection-start-line="211" selection-start-column="24" selection-end-line="211" selection-end-column="24" />
-              <folding>
-                <element signature="e#5609#5610#0" expanded="true" />
-                <element signature="e#5648#5649#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lane.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Lane.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="164" column="49" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
+            <state relative-caret-position="180">
+              <caret line="412" column="32" selection-start-line="412" selection-start-column="32" selection-end-line="412" selection-end-column="32" />
               <folding>
-                <element signature="e#4504#4505#0" expanded="true" />
-                <element signature="e#15809#15810#0" expanded="true" />
-                <element signature="e#15838#15839#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#4409#4410#0" expanded="true" />
+                <element signature="e#4438#4439#0" expanded="true" />
+                <element signature="e#9470#9471#0" expanded="true" />
+                <element signature="e#9525#9526#0" expanded="true" />
+                <element signature="e#11514#11521#0" expanded="true" />
+                <element signature="e#13349#13350#0" expanded="true" />
+                <element signature="e#13378#13379#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControlDeskView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControlDeskView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ControlDeskView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+            <state relative-caret-position="212">
+              <caret line="174" column="7" selection-start-line="174" selection-start-column="7" selection-end-line="174" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Queue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -126,8 +124,8 @@
       <file leaf-file-name="LaneView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LaneView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2608">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="103">
+              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding>
                 <element signature="e#851#852#0" expanded="true" />
                 <element signature="e#895#896#0" expanded="true" />
@@ -143,7 +141,7 @@
       <file leaf-file-name="LaneStatusView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LaneStatusView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="-1607">
               <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <element signature="e#2593#2594#0" expanded="true" />
@@ -187,13 +185,13 @@
         <option value="$PROJECT_DIR$/src/ControlDeskEvent.java" />
         <option value="$PROJECT_DIR$/src/ControlDesk.java" />
         <option value="$PROJECT_DIR$/src/LaneObserver.java" />
-        <option value="$PROJECT_DIR$/src/LaneServer.java" />
-        <option value="$PROJECT_DIR$/src/LaneView.java" />
         <option value="$PROJECT_DIR$/src/PinsetterServer.java" />
         <option value="$PROJECT_DIR$/src/LaneStatusView.java" />
         <option value="$PROJECT_DIR$/src/Pinsetter.java" />
-        <option value="$PROJECT_DIR$/src/Lane.java" />
         <option value="$PROJECT_DIR$/src/ControlDeskView.java" />
+        <option value="$PROJECT_DIR$/src/LaneServer.java" />
+        <option value="$PROJECT_DIR$/src/LaneView.java" />
+        <option value="$PROJECT_DIR$/src/Lane.java" />
       </list>
     </option>
   </component>
@@ -703,7 +701,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -714,7 +712,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39906833" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.189441" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8757764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -802,17 +800,6 @@
     <option name="showOnlyWarnings" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ScoreHistoryFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/drive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -827,10 +814,6 @@
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
             <element signature="e#0#1909#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1120,36 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LaneEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#1909#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LaneServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LaneObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PinSetterView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1158,14 +1111,6 @@
             <element signature="e#5609#5610#0" expanded="true" />
             <element signature="e#5648#5649#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PinsetterEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,10 +1133,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LaneStatusView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1607">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding>
+            <element signature="e#2593#2594#0" expanded="true" />
+            <element signature="e#2609#2610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ControlDeskView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="174" column="7" selection-start-line="174" selection-start-column="7" selection-end-line="174" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LaneEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="92" column="25" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#1909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PinsetterEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pinsetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-927">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LaneObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LaneView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2608">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="103">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="e#851#852#0" expanded="true" />
             <element signature="e#895#896#0" expanded="true" />
@@ -1203,42 +1209,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LaneStatusView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding>
-            <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2609#2610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pinsetter.java">
+    <entry file="file://$PROJECT_DIR$/src/LaneServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="164" column="49" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
+        <state relative-caret-position="180">
+          <caret line="412" column="32" selection-start-line="412" selection-start-column="32" selection-end-line="412" selection-end-column="32" />
           <folding>
-            <element signature="e#4504#4505#0" expanded="true" />
-            <element signature="e#15809#15810#0" expanded="true" />
-            <element signature="e#15838#15839#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4409#4410#0" expanded="true" />
+            <element signature="e#4438#4439#0" expanded="true" />
+            <element signature="e#9470#9471#0" expanded="true" />
+            <element signature="e#9525#9526#0" expanded="true" />
+            <element signature="e#11514#11521#0" expanded="true" />
+            <element signature="e#13349#13350#0" expanded="true" />
+            <element signature="e#13378#13379#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlDeskView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>

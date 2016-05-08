@@ -27,7 +27,6 @@ public class LaneServer {
 	 *
 	 * Method that publishes an event to subscribers
 	 *
-	 * @param event	Event that is to be published
 	 */
 
 	public void publish() {
