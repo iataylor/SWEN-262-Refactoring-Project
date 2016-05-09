@@ -1,0 +1,30 @@
+* 640f7cc : Added all the final class files and updated Lane.java
+* 7d01226 : ?
+* 92f154b : fixed merge conflicts
+*   99e2cb0 : Merge branch 'master' of https://github.com/iataylor/SWEN-262-Refactoring-Project
+|\  
+| * c95eeab : hopefully makes git work a little better
+| * 0c01eb4 : moved observer out of Pinsetter
+| * c91cf72 : totally fixed
+| * 18a3204 : updates need to fix null
+| * 2649138 : fixes
+* | 1d73462 : Added a new Scoring computation system
+|/  
+* 529b7b2 : ...
+*   c7df1f5 : Merge remote-tracking branch 'origin/master'
+|\  
+| * 7f26494 : Removed LaneEvent's extras and made everything update from Lane itself.
+| * ecaf617 : test
+* | 8237d52 : Easy clean up
+|/  
+*   83ec1a6 : Merge branch 'master' of http://github.com/iataylor/SWEN-262-Refactoring-Project
+|\  
+| * a14fb59 : Commit test
+| * e97123e : Commit test
+| * a1b0b73 : Commit test
+* | e893af3 : fix for deprecated methods and moved observer
+* | a50f274 : updates
+* | 5993a76 : push
+|/  
+* f211c87 : Added the code to the repository
+* 5203943 : Initial commit
